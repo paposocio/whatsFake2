@@ -1,0 +1,225 @@
+:root {
+    --main-icons-color: #aebac1;
+    --main-light-gray: #202C33;
+    --main-dark-gray: #111B21;
+    --main-font-color: #E9EDEF;
+    --secondary-font-color: #8696A0;
+    --green-text-color: #00A884;
+    --green-dark-color: #0A332C;
+}
+
+.contactMainInfo {
+    display: grid;
+    grid-template-columns: 0.03fr 0.33fr 0.74fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "sideBar contacts chat";
+    height: 100%;
+}
+
+.sideBar {
+    grid-area: sideBar;
+    background-color: var(--main-light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px;
+
+    & .iconG2Container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        height: 80px;
+
+        & .userProfilePicture {
+            border-radius: 100%;
+            background-color: white;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    & .iconG1Container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 300px;
+        justify-content: space-between;
+
+        & hr {
+            width: 70%;
+            border: 1px solid var(--main-icons-color);
+        }
+    }
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #111b21;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #202c33;
+    border-radius: 10px;
+    border: 0px none #ffffff;
+}
+
+.contactContainer:hover {
+    background-color: #2A3942;
+    cursor: pointer;
+}
+
+.contacts {
+    grid-area: contacts;
+    background-color: var(--main-dark-gray);
+    height: 100%;
+    color: var(--main-font-color);
+    overflow-y: auto;
+
+    & .contactsHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: var(--main-dark-gray);
+
+        & .headerTitle {
+            width: calc(100% - 45px);
+            padding-left: 20px;
+            padding-right: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 59px;
+
+            & h1 {
+                font-size: 22px;
+            }
+
+            & div {
+                width: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        & .contactSearch {
+            width: calc(100% - 20px);
+            padding: 0 10px;
+
+            & div {
+                height: 35px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: var(--main-light-gray);
+                padding: 0 15px;
+                border-radius: 12px;
+
+                & input {
+                    background-color: var(--main-light-gray);
+                    width: 85%;
+                    border: none;
+                    outline: none;
+                    resize: none;
+                    caret-color: white;
+                }
+
+                & input::placeholder {
+                    color: var(--secondary-font-color);
+                    font-size: 15px;
+                }
+            }
+        }
+
+        & .contactTabs {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        & p {
+            color: var(--green-text-color);
+            background-color: var(--green-dark-color);
+            border-radius: 20px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 8px;
+            padding: 3px 8px;
+        }
+
+    }
+
+    & .contactContainer {
+        display: grid;
+        grid-template-columns: 0.2fr 0.8fr;
+        grid-template-rows: 1fr;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "profileImageContainer InfoContainer";
+
+        & .profileImageContainer {
+            grid-area: profileImageContainer;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            padding: 6px 0px;
+
+            & .profileImageDiv {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+
+                & .profileImage {
+                    background-size: cover;
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 100px;
+                }
+            }
+        }
+
+        & .InfoContainer {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            color: white;
+            border-top: 0.1px solid rgba(128, 128, 128, 0.404);
+
+            & .contactName {
+                padding-bottom: 5px;
+            }
+
+            & div p {
+                color: var(--secondary-font-color);
+                font-size: small;
+            }
+        }
+    }
+}
+
+.chat {
+    grid-area: chat;
+    background-color: brown;
+}
