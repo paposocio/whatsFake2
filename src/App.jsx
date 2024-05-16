@@ -1,14 +1,14 @@
 import './App.css'
 import SideBar from './components/sideBar/SideBar'
 import Contacts from './components/contacts/Contacts'
-
+import Chat from './components/chat/Chat'
 function App() {
   return (
     <>
       <main className='contactMainInfo'>
-        <SideBar/>
-        <Contacts/>
-        <div className="chat">a</div>
+        <SideBar />
+        <Contacts />
+        <Chat />
       </main>
     </>
   )

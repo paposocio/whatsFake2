@@ -168,6 +168,7 @@
     }
 
     & .contactContainer {
+        height: 72px;
         display: grid;
         grid-template-columns: 0.2fr 0.8fr;
         grid-template-rows: 1fr;
@@ -187,13 +188,14 @@
 
             & .profileImageDiv {
                 display: flex;
+                flex-direction: column;
                 align-content: center;
                 justify-content: center;
 
                 & .profileImage {
                     background-size: cover;
-                    height: 45px;
-                    width: 45px;
+                    height: 49px;
+                    width: 49px;
                     border-radius: 100px;
                 }
             }
@@ -221,5 +223,48 @@
 
 .chat {
     grid-area: chat;
-    background-color: brown;
+    display: flex;
+    flex-direction: column;
+
+    & header {
+        height: 59px;
+        padding: 10px 16px;
+
+
+        & div {
+            background-color: red;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & .contactProfilePicture {
+                background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSRQCofu0UtuyxSzTgozeorI-HO_EKt2LXJYUBIPr4dvj9oEMOR);
+                background-size: cover;
+                border-radius: 100%;
+                height: 40px;
+                width: 40px;
+            }
+
+            & .contactTitle {
+                background-color: greenyellow;
+                width: 50%;
+            }
+
+            & .contactOptions {
+                background-color: #00A884;
+            }
+        }
+    }
+
+    & div {
+        background-color: yellow;
+        height: calc(100% - 121px);
+    }
+
+    & footer {
+        height: 62px;
+        background-color: green;
+    }
 }
